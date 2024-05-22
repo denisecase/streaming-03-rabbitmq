@@ -131,12 +131,12 @@ def check_and_log_rabbitmq_status():
     logging.info(DIVIDER)
 
     if not installed:
-        logging.error("ERROR: RabbitMQ is NOT installed. Please install RabbitMQ.")
+        logging.info("NOTICE: This utility was not able to verify RabbitMQ installation. Please continue with manual verification.")
         return
 
-    logging.info("Yay! RabbitMQ is installed.")
+    logging.info("Yay! This utility verified RabbitMQ is installed.")
     if not is_rabbitmq_running():
-        logging.warning("RabbitMQ is NOT running. Please start RabbitMQ.")
+        logging.warning("This utility thinks RabbitMQ may not be runnning. Please start RabbitMQ if needed.")
         start_command = get_rabbitmq_start_command()
         if start_command:
             logging.info(f"Try the following command: {start_command}")
