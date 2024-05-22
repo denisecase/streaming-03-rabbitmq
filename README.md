@@ -11,7 +11,6 @@ We use the built-in Python utility `venv` to create our virtual environment.
 There are other options, but this is simplest and most common. 
 We create the environment as a subfolder of this repo named .venv to keep it away from our project code. 
 
-
 ## Prerequisites
 
 1. Git
@@ -25,6 +24,8 @@ See the Markdown page for your operating system to verify RabbitMQ is installed 
 - [Linux](RABBIT_INSTALL_VERIFICATION_LINUX.md)
 - [macOS](RABBIT_INSTALL_VERIFICATION_MACOS.md)
 - [Windows](RABBIT_INSTALL_VERIFICATION_WINDOWS.md)
+
+:chart: Display a screenshot here that verifies your RabbitMQ is installed and running.
 
 ## Before You Begin
 
@@ -68,7 +69,7 @@ Make sure you can see the .venv name in your terminal prompt before running this
 
 `python -m pip install -r requirements.txt`
 
-## Task 4. Verify Setup (OPTIONAL - ONLY WORK ON SOME CONFIGURATIONS)
+## Task 4. Verify Setup
 
 In your VS Code terminal window, run the following commands to help verify your setup.
 These util files MAY be helpful to ensure you're setup correctly. 
@@ -118,6 +119,8 @@ As long as the process is running, we cannot use this terminal for other command
 1. Open a new terminal window.
 1. Use this new window to run emit_message.py again.
 1. Watch the listing terminal - what do you see?  A second message?
+
+:chart: Display a screenshot here that shows your two terminal windows communicating successfully. 
 
 Sending the same message each time is kind of boring. This time:
 
