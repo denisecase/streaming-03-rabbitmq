@@ -20,6 +20,12 @@ We create the environment as a subfolder of this repo named .venv to keep it awa
 1. VS Code Extension: Python (by Microsoft)
 1. RabbitMQ Server installed and running locally
 
+See the Markdown page for your operating system to verify RabbitMQ is installed and running on your machine before attempting to continue. 
+
+- [Linux](RABBIT_INSTALL_VERIFICATION_LINUX.md)
+- [macOS](RABBIT_INSTALL_VERIFICATION_MACOS.md)
+- [Windows](RABBIT_INSTALL_VERIFICATION_WINDOWS.md)
+
 ## Before You Begin
 
 1. Fork this starter repo into your GitHub account.
