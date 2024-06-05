@@ -39,63 +39,192 @@ Follow this common workflow to start a new project by using this starter repo.
 6. Open a terminal in VS Code - PowerShell if Windows, zsh or bash if Mac/Linux.
 7. Git add and commit with a useful message (e.g. "initial commit") and push to GitHub.
 
-## Task 1. Create a Python Virtual Environment
+## Task 1. Create and Manage your Project Virtual Environment
 
-We will create a local Python virtual environment to isolate our project's third-party dependencies from other projects.
+We will use pika, which is not included in the Python Standard Library. We must install it. 
+To keep our project separate from all other Python projects, we will create and manage a local project virtual environment.
+We'll install our  packages into the local project virtual environment.  
+The steps in this common workflow are listed below.
+Details are provided in the numbered tasks. 
 
-1. Open a terminal window in VS Code.
-1. Use the built-in Python utility venv to create a new virtual environment named `.venv` in the current directory.
+1. Open your project folder in VS Code.
+2. Open a terminal window in VS Code (PowerShell for Windows, zsh or bash for Mac/Linux). 
+3. Use git pull first, to make sure you have the current project on your machine.
+4. Use venv to create a new .venv environment in the repo on your machine. 
+5. Activate your environment using the command for your operating system. 
+6. Use pip to install necessary packages into your active project virtual environment.
+7. Edit your README.md to record your commands, process, and notes.
+8. Git add / commit / push to GitHub.
+9. Verify your work.
+
+### 1.1. Open Project in VS Code
+
+Open the project folder on your machine (the one you cloned from GitHub into your Documents folder) if not already open. 
+
+### 1.2. Open VS Code Terminal
+
+Open a terminal window in VS Code (PowerShell for Windows, zsh or bash for Mac/Linux). 
+
+### 1.3. Git Pull
+
+In the terminal, run git pull to fetch any changes that might have been made to the GitHub version.
+There may not be any changes, but it's good practice to pull every time you start work on a git project. 
 
 ```shell
-python -m venv .venv
+git pull
 ```
 
-Verify you get a new .venv directory in your project. 
-We use .venv as the name to keep it away from our project files. 
+### 1.4. Create Project Virtual Environment
 
-## Task 2. Activate the Virtual Environment
+Use your terminal to create your project virtual environment by running venv as a Python module (py -m venv) and providing a name to use for the local folder as .venv.
+If you name it differently, be sure that your folder name is included in the .gitignore file. 
 
-In the same VS Code terminal window, activate the virtual environment.
+Windows command
 
-- On Windows, run: `.venv\Scripts\activate`
-- On Linux/MacOS, run: `source .venv/bin/activate`
+```shell
+py -m venv .venv
+```
+
+Mac/Linux command
+
+```
+python3 -m venv .venv
+```
+
+You should get a new folder in your project repository named .venv. 
+If VS Code asks to use use this environment, click Yes. 
+
+### 1.5. Activate the Project Virtual Environment
+
+Use your terminal to activate your project virtual environment. (Do this every time you open a new terminal to work on your project.)
+
+Windows commands to activate your .venv. Try the first. Use the second if the first doesn't work. 
+
+```shell
+.venv\Scripts\Activate
+.\.venv\Scripts\Activate.ps1
+```
+
+Mac/Linux command to activate your .venv
+
+```shell
+source .venv/bin/activate
+```
 
 Verify you see the virtual environment name (.venv) in your terminal prompt.
 
-## Task 3. Install Dependencies into the Virtual Environment
+### 1.6. Install Packages into Active Environment
 
-To work with RabbitMQ, we need to install the pika library.
-A library is a collection of code that we can use in our own code.
-Learning to use free libraries that others have written to make our projects easier, faster, more reliable is a key skill for a developer.
+Verify your project virtual environment located in .venv is active.
+If not, activate it. 
+You should see .venv in your terminal prompt. 
+Use your favorite method to install the necessary packages.
 
-We keep the list of third-party libraries needed in a file named requirements.txt.
-Use the pip utility to install the libraries listed in requirements.txt into our active virtual environment. 
+At this point, the only project dependencies we know we need are:
 
-Make sure you can see the .venv name in your terminal prompt before running this command.
+- pika - allows us to use RabbitMQ with Python
+ 
+Windows command to install project dependencies:
 
-`python -m pip install -r requirements.txt`
+```shell
+py -m pip install pika
+```
 
-## Task 4. Verify Setup
+Mac/Linux command to install project dependencies:
 
-In your VS Code terminal window, run the following commands to help verify your setup.
+```shell
+python3 -m pip install pika
+```
+
+OR: Use requirements.txt to install packages instead
+
+If you like, you can use a [requirements.txt](requirements.txt) file to install dependencies instead.
+These files are helpful in projects when we have several external packages to install and it can be good practice.
+
+To do so, you'll need a file named requirements.txt in the root folder of your repository listing each external package used, one per line. 
+
+If using Windows PowerShell, install into your active project virtual environment with this command:
+
+```shell
+py -m pip install -r requirements.txt
+```
+
+If using Mac or Linux, install into your active project virtual environment with this command:
+
+```shell
+python3 -m pip install -r requirements.txt
+```
+
+If successful, you will now be able to use the following line in your Python scripts.
+If you get an error on this line, work through the steps above to
+create, activate, and install into your local project virtual environment,
+and make sure VS Code is using your .venv local project environment. 
+
+```
+import pika
+```
+
+### 1.7. Edit README.md
+
+Edit your README.md file to record your commands, process, and notes.
+Use one hash followed by a space for the title.
+Use two hashes followed by a space to create second level headings. 
+Use triple back tics on a line by themselves to "fence" your code.
+ 
+
+### 1.8. Git Add / Commit / Push to GitHub
+
+Use your terminal to add your files to source control, commit your changes to git, and push them up to GitHub. 
+
+Git add any new files.
+
+```shell
+git add .
+```
+
+Git commit changes.
+
+```shell
+git commit -m "after .venv setup"
+```
+
+Git push to GitHub. 
+
+```shell
+git push -u origin main
+```
+ 
+
+### 1.9. Verify
+
+Verify your README.md and .gitignore (and optionally, requirements.txt if used) appear correctly in your GitHub repo.
+Since you added .venv/ to your .gitignore, your .venv folder should NOT appear in GitHub.
+This is good - it saves space and allows us to track just the progress of our project files. 
+
+
+
+## Optional - Utility Scripts 
+
+In your VS Code terminal window, you may try to run the following commands to help verify your setup.
 These util files MAY be helpful to ensure you're setup correctly. 
 You may have a different configuration and RabbitMQ may still work; the check looks in common places, but may not work for all installations. 
 They are meant to be helpful, but are not required.
 
 You can help by updating the code for other common configurations. 
 Just fork the current repo, add your change, and create a pull request (no other changes please) and I'll pull it back in. 
+If Mac/Linux, use python3 instead of py. Or python. Whatever works on your machine. 
 
 ```shell
-python util_about.py
-python util_aboutenv.py
-python util_aboutrabbit.py
-pip list
+py util_about.py
+py util_aboutenv.py
+py util_aboutrabbit.py
+py -m pip list
 ```
 
 ![verifying setup](./images/verifying.png)
 
 
-## Task 5. Read
+## Task 2. Read
 
 1. Read the [RabbitMQ Hello World! tutorial](https://www.rabbitmq.com/tutorials/tutorial-one-python.html)
 1. Read the code and comments in our 2 project files: emit_message.py and listen_for_messages.py
@@ -103,24 +232,46 @@ pip list
 Don't worry if it doesn't all make sense the first time. 
 Approach it like a puzzle and see what you can figure out. 
 
-## Task 6. Execute the Producer/Sender
+## Task 3. Execute the Producer/Sender
 
-1. Read v1_emit_message.py (and the tutorial)
-1. Run the file. 
+Read v1_emit_message.py (and the tutorial)
 
-It will run, emit a message to the named RabbitMQ queue, and finish.
+Run the file on Windows:
+
+```shell
+py v1_emit_message.py
+```
+
+Run the file on Mac/Linux:
+
+```shell
+python3 v1_emit_message.py
+```
+
+It should run, emit a message to the named RabbitMQ queue, and finish.
 We can execute additional commands in the terminal as soon as it finishes. 
 
-## Task 7. Execute the Consumer/Listener
+## Task 4. Execute the Consumer/Listener
 
-1. Read v1_listen_for_messages.py (and the tutorial)
-1. Run the file.
+Read v1_listen_for_messages.py (and the tutorial)
+
+Run the file on Windows:
+
+```shell
+py v1_listen_for_messages.py
+```
+
+Run the file on Mac/Linux:
+
+```shell
+python3 v1_listen_for_messages.py
+```
 
 You'll need to fix an error in the program to get it to run.
 Once it runs successfully, will it terminate on its own? How do you know? 
 As long as the process is running, we cannot use this terminal for other commands. 
 
-## Task 8. Open a New Terminal / Emit More Messages
+## Task 5. Open a New Terminal / Emit More Messages
 
 1. Open a new terminal window.
 1. Use this new window to run emit_message.py again.
@@ -138,7 +289,7 @@ Sending the same message each time is kind of boring. This time:
 Repeat this process several times - emit at least 4 different messages.
 Don't worry - it's just code. We can always revert back (try the 'undo' command in VS Code) to a version that works. You can't hurt anything.
 
-## Task 9. Save Time & Effort: Don't Repeat Yourself
+## Task 6. Save Time & Effort: Don't Repeat Yourself
 
 Did you notice you had to change the message in TWO places?
 
