@@ -29,9 +29,15 @@ See the Markdown page for your operating system to verify RabbitMQ is installed 
 
 ## Before You Begin
 
-1. Fork this starter repo into your GitHub account.
-1. Clone your repo down to your machine.
-1. Explore your new project repo in VS Code on your local machine.
+Follow this common workflow to start a new project by using this starter repo. 
+
+1. In your browser, fork this repository into your own GitHub account. 
+2. Clone your new GitHub repository down to your machine into your Documents folder.
+3. Open your project folder in VS Code (if you haven't already).
+4. In VS Code, if it doesn't already exist, add a useful .gitignore with a line for .vsode/ and .venv/ and whatever else doesn't need to go in the repo. Here's an [example](.gitignore).
+5. In VS Code, edit your README.md to record your commands, process, and notes so far.
+6. Open a terminal in VS Code - PowerShell if Windows, zsh or bash if Mac/Linux.
+7. Git add and commit with a useful message (e.g. "initial commit") and push to GitHub.
 
 ## Task 1. Create a Python Virtual Environment
 
