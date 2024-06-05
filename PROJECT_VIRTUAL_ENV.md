@@ -15,15 +15,15 @@ Details and commands used are provided in the following sections.
 8. Git add / commit / push to GitHub.
 9. Verify your work.
 
-### 1.1. Open Project in VS Code
+### 1. Open Project in VS Code
 
 Open the project folder on your machine (the one you cloned from GitHub into your Documents folder) if not already open. 
 
-### 1.2. Open VS Code Terminal
+### 2. Open VS Code Terminal
 
 Open a terminal window in VS Code (PowerShell for Windows, zsh or bash for Mac/Linux). 
 
-### 1.3. Git Pull
+### 3. Git Pull
 
 In the terminal, run git pull to fetch any changes that might have been made to the GitHub version.
 There may not be any changes, but it's good practice to pull every time you start work on a git project. 
@@ -32,7 +32,7 @@ There may not be any changes, but it's good practice to pull every time you star
 git pull
 ```
 
-### 1.4. Create Project Virtual Environment
+### 4. Create Project Virtual Environment
 
 Use your terminal to create your project virtual environment by running venv as a Python module (py -m venv) and providing a name to use for the local folder as .venv.
 If you name it differently, be sure that your folder name is included in the .gitignore file. 
@@ -52,7 +52,7 @@ python3 -m venv .venv
 You should get a new folder in your project repository named .venv. 
 If VS Code asks to use use this environment, click Yes. 
 
-### 1.5. Activate the Project Virtual Environment
+### 5. Activate the Project Virtual Environment
 
 Use your terminal to activate your project virtual environment. (Do this every time you open a new terminal to work on your project.)
 
@@ -71,7 +71,7 @@ source .venv/bin/activate
 
 Verify you see the virtual environment name (.venv) in your terminal prompt.
 
-### 1.6. Install Packages into Active Environment
+### 6. Install Packages into Active Environment
 
 Verify your project virtual environment located in .venv is active.
 If not, activate it. 
@@ -122,15 +122,33 @@ and make sure VS Code is using your .venv local project environment.
 import pika
 ```
 
-### 1.7. Edit README.md
+### 7. Edit README.md
 
-Edit your README.md file to record your commands, process, and notes.
+In VS Code, edit your README.md file to record your commands, process, and notes.
+
 Use one hash followed by a space for the title.
+
 Use two hashes followed by a space to create second level headings. 
+
 Use triple back tics on a line by themselves to "fence" your code.
  
+### 8. Set VS Code Interpreter
 
-### 1.8. Git Add / Commit / Push to GitHub
+In VS Code, from the menu, select View.
+From the dropdown menu, select Command Palette.... 
+
+Alternatively, you can use the shortcut Ctrl+Shift+P (Windows/Linux) or Cmd+Shift+P (Mac) to open the Command Palette.
+
+In the Command Palette, start typing Python: Select Interpreter.
+
+When you see Python: Select Interpreter in the list of options, click on it.
+A list of available Python interpreters will appear.
+
+Locate and select your project's virtual environment, typically named .venv (or similar).
+
+Confirm your selection. VS Code will now use the selected interpreter for your project.
+
+### 9. Git Add / Commit / Push to GitHub
 
 Use your terminal to add your files to source control, commit your changes to git, and push them up to GitHub. 
 
@@ -152,7 +170,7 @@ Git push to GitHub.
 git push -u origin main
 ```
 
-### 1.9. Verify
+### 10. Verify
 
 Verify your README.md and .gitignore (and optionally, requirements.txt if used) appear correctly in your GitHub repo.
 Since you added .venv/ to your .gitignore, your .venv folder should NOT appear in GitHub.
