@@ -27,7 +27,7 @@ See the Markdown page for your operating system to verify RabbitMQ is installed 
 
 :chart: Display a screenshot here that verifies your RabbitMQ is installed and running.
 
-## Before You Begin
+## Before You Begin - Start A New Project
 
 Follow this common workflow to start a new project by using this starter repo. 
 
