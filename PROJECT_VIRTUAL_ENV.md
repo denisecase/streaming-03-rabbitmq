@@ -12,8 +12,9 @@ Details and commands used are provided in the following sections.
 5. Activate your environment using the command for your operating system. 
 6. Use pip to install necessary packages into your active project virtual environment.
 7. Edit your README.md to record your commands, process, and notes.
-8. Git add / commit / push to GitHub.
-9. Verify your work.
+8. Set your VS Code Python Interpreter so your installed packages will be available for import.
+9. Git add / commit / push to GitHub.
+10. Verify your work.
 
 ### 1. Open Project in VS Code
 
