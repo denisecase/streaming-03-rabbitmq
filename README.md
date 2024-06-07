@@ -43,20 +43,8 @@ Follow this common workflow to start a new project by using this starter repo.
 
 We will use pika, which is not included in the Python Standard Library. We must install it. 
 To keep our project separate from all other Python projects, we will create and manage a local project virtual environment.
-We'll install our  packages into the local project virtual environment.  
-The steps in this common workflow are listed below.
-For detailed steps, see [PROJECT_VIRTUAL_ENV.md](https://github.com/denisecase/streaming-03-rabbitmq/blob/main/PROJECT_VIRTUAL_ENV.md). 
-
-1. Open your project folder in VS Code.
-2. Open a terminal window in VS Code (PowerShell for Windows, zsh or bash for Mac/Linux). 
-3. Use git pull first, to make sure you have the current project on your machine.
-4. Use venv to create a new .venv environment in the repo on your machine. 
-5. Activate your environment using the command for your operating system. 
-6. Use pip to install necessary packages into your active project virtual environment.
-7. In VS Code, edit your README.md and record your commands, process, and notes.
-8. In VS Code, use View / Command Palette - then Python: Select Interpreter to use your .venv.
-9. Use a terminal to Git add / commit / push to GitHub.
-10. Verify your GitHub repository.  
+We'll install our packages into the local project virtual environment.
+For the recommended process with detailed steps and commands, see [PROJECT_VIRTUAL_ENV.md](PROJECT_VIRTUAL_ENV.md).
 
 ## Optional - Utility Scripts 
 
